@@ -1,6 +1,28 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css?family=Inter:700|Source%20Serif%204:400');
 
+/* Tailwind Color Theme */
+@theme {
+  /* deep sea */
+  --color-surface: #122340; 
+  /* lemon sorbet  */
+  --color-primary: #feffa1;
+  /* royal purple */
+  --color-secondary: #432183;
+  /* electric lime  */
+  --color-accent: #a2ec45;
+  /* dark slate blue */
+  --color-surface-elevated: #1a2d4a;
+  /* Midnight-blue  */
+  --color-surface-hover: #203354;
+  /* slate gray  */
+  --color-divider: #2a3f5f;
+  /* light steel blue */
+  --color-muted: #a8bfd9;
+  /* powder blue */
+  --color-content: #d6e3f5;
+}
+
 body {
   font-family: 'Source Serif 4';
   font-weight: 400;
