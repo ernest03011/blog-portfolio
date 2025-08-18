@@ -22,6 +22,8 @@
   --color-content: #d6e3f5;
 }
 
+/* Typography  */
+
 body {
   font-family: 'Source Serif 4';
   font-weight: 400;
@@ -45,3 +47,7 @@ h4 {font-size: 1.563rem; /* 24.96px */}
 h5 {font-size: 1.250rem; /* 20px */}
 
 small {font-size: 0.800rem; /* 12.8px */}
+
+.ff-jetbrains-mono{
+  font-family: "JetBrains Mono", monospace;
+}
