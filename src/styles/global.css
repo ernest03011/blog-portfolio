@@ -3,7 +3,7 @@
 /* Tailwind Color Theme */
 @theme {
   /* deep sea */
-  --color-surface: #122340; 
+  --color-surface: #122340;
   /* lemon sorbet  */
   --color-primary: #feffa1;
   /* royal purple */
@@ -25,29 +25,47 @@
 /* Typography  */
 
 body {
-  font-family: 'Source Serif 4';
+  font-family: "Source Serif 4";
   font-weight: 400;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Inter';
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Inter";
   font-weight: 700;
 }
 
-html {font-size: 100%;} /* 16px */
+html {
+  font-size: 100%;
+} /* 16px */
 
-h1 {font-size: 3.053rem; /* 48.8px */}
+h1 {
+  font-size: 3.053rem; /* 48.8px */
+}
 
-h2 {font-size: 2.442rem; /* 39.04px */}
+h2 {
+  font-size: 2.442rem; /* 39.04px */
+}
 
-h3 {font-size: 1.954rem; /* 31.2px */}
+h3 {
+  font-size: 1.954rem; /* 31.2px */
+}
 
-h4 {font-size: 1.563rem; /* 24.96px */}
+h4 {
+  font-size: 1.563rem; /* 24.96px */
+}
 
-h5 {font-size: 1.250rem; /* 20px */}
+h5 {
+  font-size: 1.25rem; /* 20px */
+}
 
-small {font-size: 0.800rem; /* 12.8px */}
+small {
+  font-size: 0.8rem; /* 12.8px */
+}
 
-.ff-jetbrains-mono{
+.ff-jetbrains-mono {
   font-family: "JetBrains Mono", monospace;
 }
