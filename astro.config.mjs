@@ -7,13 +7,18 @@ import mdx from "@astrojs/mdx";
 
 import icon from "astro-icon";
 
-// https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
 
-  integrations: [mdx(), icon({
-    iconDir: "src/assets/icons",
-  })],
+  integrations: [
+    mdx(), 
+    // Icon integration requires specific setting when using server or hybrid 
+    // to avoid that all icons from the library (mdi is being used) are installed
+    // https://www.astroicon.dev/reference/configuration/
+    icon({
+      iconDir: "src/assets/icons",
+    })
+  ],
 });
