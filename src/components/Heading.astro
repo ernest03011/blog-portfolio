@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  hasSeparator: boolean;
+}
+
+const { title, hasSeparator = false } = Astro.props;
+---
+
+<div class="prose">
+  <div class="title">
+    <h1 class="text-primary">{title}</h1>
+    {hasSeparator && <hr class="text-divider" />}
+  </div>
+</div>
+
+<style>
+  .prose {
+    width: 720px;
+    max-width: calc(100% - 2em);
+    margin: auto;
+    padding: 1em;
+  }
+  .title {
+    margin-bottom: 1em;
+    padding: 1em 0;
+    text-align: center;
+    line-height: 1;
+  }
+  .title h1 {
+    margin: 0 0 0.5em 0;
+  }
+</style>

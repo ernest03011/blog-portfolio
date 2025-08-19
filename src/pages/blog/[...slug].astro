@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
-import BaseLayout from "@layouts/BaseLayout.astro";
+import BlogPostLayout from "@layouts/BlogPostLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -15,7 +15,7 @@ const post = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BaseLayout {...post.data}>
+<BlogPostLayout {...post.data}>
   <div class="mb-4">
     <a class="text-primary hover:text-accent transition-colors" href="/blog">
       ← Go back</a
@@ -24,4 +24,4 @@ const { Content } = await render(post);
   <div class="text-content">
     <Content />
   </div>
-</BaseLayout>
+</BlogPostLayout>
