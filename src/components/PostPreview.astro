@@ -30,7 +30,7 @@ const { post } = Astro.props;
         <Image width={720} height={360} src={post.data.heroImage} alt="" />
   )}
 } -->
-  <h4 class="text-primary mb-3 font-semibold">
+  <h4 class="text-primary group-hover:text-accent mb-3 font-semibold">
     <a href={`/blog/${post.id}`}># {post.data.title}</a>
   </h4>
   <!-- 
