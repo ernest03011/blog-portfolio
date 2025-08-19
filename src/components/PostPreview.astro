@@ -1,0 +1,55 @@
+---
+// import { type CollectionEntry, getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+import FormattedDate from "@components/FormattedDate.astro";
+
+type Data = {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+};
+
+type Post = {
+  id: string;
+  data: Data;
+};
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+---
+
+<article
+  class="group border-divider my-1 w-full rounded-lg border-1 p-5 md:my-4"
+>
+  <!-- {
+  {post.data.heroImage && (
+        <Image width={720} height={360} src={post.data.heroImage} alt="" />
+  )}
+} -->
+  <h4 class="text-primary mb-3 font-semibold">
+    <a href={`/blog/${post.id}`}># {post.data.title}</a>
+  </h4>
+  <!-- 
+  {
+    description && (
+      <p class="text-foreground my-4 pl-0.5 text-base/7">{description}</p>
+    )
+  } -->
+
+  <div>
+    <p class="date">
+      <FormattedDate date={post.data.pubDate} />
+    </p>
+    <a
+      class="group-hover:text-accent flex items-center"
+      href={`/blog/${post.id}`}
+    >
+      Read
+      <Icon name="mdi:chevron-double-right" class="ml-2" size={20} />
+    </a>
+  </div>
+</article>
