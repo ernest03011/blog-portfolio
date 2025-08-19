@@ -1,10 +1,16 @@
 ---
+import Box from "@components/Box.astro";
 import Layout from "@layouts/BaseLayout.astro";
 ---
 
 <Layout title="Homepage" description="Lorem ipsum dolor sit amet">
-  <div class="text-content">
-    <p>
+  <Box>
+    <h4 slot="box-heading" class="text-primary mb-1">
+      &lt;AuthorBioSummary <span class="hidden md:inline"
+        >title="Software Developer"</span
+      > /&gt;
+    </h4>
+    <p slot="box-body" class="text-content mb-4">
       I'm Manuel De Jesús (manuel.djs) a software developer who has been around
       the web either providing support to Websites (mostly php-based ones) or
       working on personal projects. This is my blog and excited to share my
@@ -13,6 +19,5 @@ import Layout from "@layouts/BaseLayout.astro";
         href="/blog">posts in my blog</a
       >
     </p>
-    <br />
-  </div>
+  </Box>
 </Layout>
