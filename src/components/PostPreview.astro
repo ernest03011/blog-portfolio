@@ -1,5 +1,4 @@
 ---
-// import { type CollectionEntry, getCollection } from "astro:content";
 import { Icon } from "astro-icon/components";
 import FormattedDate from "@components/FormattedDate.astro";
 
@@ -17,9 +16,18 @@ type Post = {
 
 interface Props {
   post: Post;
+  variant?: "minimal" | "moderate" | "complete";
 }
 
-const { post } = Astro.props;
+const { post, variant = "complete" } = Astro.props;
+
+const variantConfig = {
+  minimal: { showDescription: false, showImage: false },
+  moderate: { showDescription: true, showImage: false },
+  complete: { showDescription: true, showImage: true },
+};
+
+const { showDescription, showImage } = variantConfig[variant];
 ---
 
 <article
@@ -33,17 +41,17 @@ const { post } = Astro.props;
   <h4 class="text-primary group-hover:text-accent mb-3 font-semibold">
     <a href={`/blog/${post.id}`}># {post.data.title}</a>
   </h4>
-
+  <!-- Description  -->
   <div>
     {
-      post.data.description && (
+      showDescription && (
         <p class="text-foreground my-4 pl-0.5 text-base/7">
           {post.data.description}
         </p>
       )
     }
   </div>
-
+  <!-- Date and Read link -->
   <div>
     <p class="date">
       <FormattedDate date={post.data.pubDate} />
