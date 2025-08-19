@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PostPreview from "./PostPreview.astro";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  posts: CollectionEntry<"blog">[];
+}
+
+const { posts } = Astro.props;
+---
+
+<div class="border-divider border-t-1">
+  <div class="">
+    <h2 class="text-content text-center">Latest Posts</h2>
+  </div>
+  <div class="text-content mb-8">
+    {posts.map((post) => <PostPreview post={post} variant="minimal" />)}
+  </div>
+  <div class="mb-8 flex items-center justify-center">
+    <a
+      class="hover:text-accent bg-accent hover:border-accent text-surface rounded-lg px-6 py-2 font-bold hover:border-1 hover:bg-transparent"
+      href="/blog"
+    >
+      See all of the posts <span
+        ><Icon name="mdi:chevron-double-right" size={20} class="inline" /></span
+      >
+    </a>
+  </div>
+</div>
