@@ -15,6 +15,6 @@ const posts = (await getCollection("blog")).sort(
     <Heading title="Welcome to the Blog!" hasSeparator={true} />
   </section>
   <section class="text-content">
-    {posts.map((post) => <PostPreview {post} />)}
+    {posts.map((post) => <PostPreview post={post} variant="moderate" />)}
   </section>
 </Layout>
