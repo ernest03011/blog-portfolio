@@ -33,12 +33,16 @@ const { post } = Astro.props;
   <h4 class="text-primary group-hover:text-accent mb-3 font-semibold">
     <a href={`/blog/${post.id}`}># {post.data.title}</a>
   </h4>
-  <!-- 
-  {
-    description && (
-      <p class="text-foreground my-4 pl-0.5 text-base/7">{description}</p>
-    )
-  } -->
+
+  <div>
+    {
+      post.data.description && (
+        <p class="text-foreground my-4 pl-0.5 text-base/7">
+          {post.data.description}
+        </p>
+      )
+    }
+  </div>
 
   <div>
     <p class="date">
