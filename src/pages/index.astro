@@ -1,23 +1,54 @@
 ---
+import { getCollection } from "astro:content";
 import Box from "@components/Box.astro";
 import Layout from "@layouts/BaseLayout.astro";
+import LatestPosts from "@components/LatestPosts.astro";
+
+const posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
 ---
 
 <Layout title="Homepage" description="Lorem ipsum dolor sit amet">
-  <Box>
-    <h4 slot="box-heading" class="text-primary mb-1">
-      &lt;AuthorBioSummary <span class="hidden md:inline"
-        >title="Software Developer"</span
-      > /&gt;
-    </h4>
-    <p slot="box-body" class="text-content mb-4">
-      I'm Manuel De Jesús (manuel.djs) a software developer who has been around
-      the web either providing support to Websites (mostly php-based ones) or
-      working on personal projects. This is my blog and excited to share my
-      knowledge and keep learning. See all of the <a
-        class="text-accent"
-        href="/blog">posts in my blog</a
-      >
-    </p>
-  </Box>
+  <section class="mb-25 pt-10">
+    <div class="mb-4">
+      <h1 class="text-primary text-center font-bold italic">
+        Welcome <span
+          id="welcome-word"
+          class="text-content inline-block transition-opacity duration-300 ease-in-out"
+          >to</span
+        >!
+      </h1>
+    </div>
+    <Box>
+      <h4 slot="box-heading" class="text-primary mb-1">
+        &lt;AuthorBioSummary <span class="hidden md:inline"
+          >title="Software Developer"</span
+        > /&gt;
+      </h4>
+      <p slot="box-body" class="text-content mb-4">
+        I'm Manuel De Jesús (manuel.djs) a software developer who has been
+        around the web either providing support to Websites (mostly php-based
+        ones) or working on personal projects. This is my blog and excited to
+        share my knowledge and keep learning.
+      </p>
+    </Box>
+  </section>
+  <LatestPosts {posts} />
 </Layout>
+
+<script>
+  const word = document.getElementById("welcome-word");
+
+  function toggleWord() {
+    if (word) {
+      word.style.opacity = "0";
+      setTimeout(() => {
+        word.textContent = word.textContent === "to" ? "back" : "to";
+        word.style.opacity = "1";
+      }, 150);
+    }
+  }
+
+  setInterval(toggleWord, 5000);
+</script>
