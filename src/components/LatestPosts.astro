@@ -15,7 +15,11 @@ const { posts } = Astro.props;
     <h2 class="text-content text-center italic">Latest Posts</h2>
   </div>
   <div class="text-content mb-8">
-    {posts.map((post) => <PostPreview post={post} variant="minimal" />)}
+    {
+      posts.map((post) => (
+        <PostPreview post={post} variant="minimal" cardDesign="secondary" />
+      ))
+    }
   </div>
   <div class="mb-8 flex items-center justify-center">
     <a
