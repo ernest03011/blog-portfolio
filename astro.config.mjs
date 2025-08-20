@@ -6,20 +6,20 @@ import icon from "astro-icon";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 
+import sitemap from "@astrojs/sitemap";
+
+
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
 
-  integrations: [
-    mdx(), 
-    // Icon integration requires specific setting when using server or hybrid 
-    // to avoid that all icons from the library (mdi is being used) are installed
-    // https://www.astroicon.dev/reference/configuration/
-    icon({
-      iconDir: "src/assets/icons",
-    })
-  ],
+  integrations: [mdx(), // Icon integration requires specific setting when using server or hybrid 
+  // to avoid that all icons from the library (mdi is being used) are installed
+  // https://www.astroicon.dev/reference/configuration/
+  icon({
+    iconDir: "src/assets/icons",
+  }), sitemap()],
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
