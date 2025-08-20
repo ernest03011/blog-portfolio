@@ -1,11 +1,10 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-
 import tailwindcss from "@tailwindcss/vite";
-
 import mdx from "@astrojs/mdx";
-
 import icon from "astro-icon";
+import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
+
 
 export default defineConfig({
   vite: {
@@ -21,4 +20,7 @@ export default defineConfig({
       iconDir: "src/assets/icons",
     })
   ],
+  markdown: {
+    remarkPlugins: [remarkReadingTime],
+  },
 });
