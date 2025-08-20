@@ -1,0 +1,54 @@
+/* Print Stylesheet for Blog Posts */
+@media print {
+  /* Hide non-essential UI */
+  nav, header, footer, .sidebar, .ad, .no-print {
+    display: none !important;
+  }
+
+  /* Base typography */
+  body {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff !important;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5 {
+    color: #000;
+    page-break-after: avoid;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  /* Paragraphs and lists */
+  p, ul, ol, blockquote {
+    margin-bottom: 1em;
+  }
+
+  /* Links show URLs */
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+  }
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  /* Images and tables */
+  img, table, blockquote {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Page break control */
+  article, section {
+    page-break-before: avoid;
+    page-break-after: auto;
+  }
+}

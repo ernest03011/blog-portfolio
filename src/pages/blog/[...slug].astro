@@ -1,27 +1,37 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import BlogPostLayout from "@layouts/BlogPostLayout.astro";
+import "@styles/print.css";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
   return posts.map((post) => ({
-    params: { slug: post.id },
+    params: { slug: post.slug },
     props: post,
   }));
 }
 type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
-const { Content } = await render(post);
+const { Content, remarkPluginFrontmatter } = await render(post);
 ---
 
 <BlogPostLayout {...post.data}>
-  <div class="mb-4">
+  <div class="no-print mb-4">
     <a class="text-primary hover:text-accent transition-colors" href="/blog">
       ← Go back</a
     >
+    <p class="text-primary/40">{remarkPluginFrontmatter.minutesRead}</p>
   </div>
-  <div class="text-content">
+  <div class="text-content content">
     <Content />
   </div>
 </BlogPostLayout>
+
+<style>
+  .content {
+    max-width: 65ch;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+</style>
