@@ -22,7 +22,15 @@ const { Content, remarkPluginFrontmatter } = await render(post);
     >
     <p class="text-primary/40">{remarkPluginFrontmatter.minutesRead}</p>
   </div>
-  <div class="text-content">
+  <div class="text-content content">
     <Content />
   </div>
 </BlogPostLayout>
+
+<style>
+  .content {
+    max-width: 65ch;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+</style>
