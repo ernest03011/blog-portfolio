@@ -10,6 +10,7 @@ import sitemap from "@astrojs/sitemap";
 
 
 export default defineConfig({
+  site: 'https://manueldjs.online',
   vite: {
     plugins: [tailwindcss()],
   },
