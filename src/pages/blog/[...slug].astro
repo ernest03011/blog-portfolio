@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import BlogPostLayout from "@layouts/BlogPostLayout.astro";
+import "./src/styles/print.css";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -16,7 +17,7 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 ---
 
 <BlogPostLayout {...post.data}>
-  <div class="mb-4">
+  <div class="no-print mb-4">
     <a class="text-primary hover:text-accent transition-colors" href="/blog">
       ← Go back</a
     >
