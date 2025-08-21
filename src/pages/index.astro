@@ -18,7 +18,7 @@ const bioSummary =
 
 <Layout title={title} description={description}>
   <section class="mb-25 pt-10">
-    <div class="mb-4">
+    <div class="title-container">
       <h1 class="text-primary text-center font-bold italic">
         Welcome <span
           id="welcome-word"
@@ -54,3 +54,23 @@ const bioSummary =
 
   setInterval(toggleWord, 5000);
 </script>
+
+<style>
+  .title-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    min-height: 7rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (width >= 640px) {
+    .title-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      place-items: center;
+      min-height: 3rem;
+      margin-bottom: 1rem;
+    }
+  }
+</style>
