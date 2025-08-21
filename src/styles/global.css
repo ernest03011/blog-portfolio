@@ -71,3 +71,26 @@ small {
 .ff-jetbrains-mono {
   font-family: "JetBrains Mono", monospace;
 }
+
+/* Below 640px (smaller headings, same ratio) */
+@media (max-width: 639px) {
+  h1 {
+    font-size: 2.488rem; /* ~39.8px */
+  }
+
+  h2 {
+    font-size: 1.99rem; /* ~31.8px */
+  }
+
+  h3 {
+    font-size: 1.563rem; /* ~25px */
+  }
+
+  h4 {
+    font-size: 1.25rem; /* 20px */
+  }
+
+  h5 {
+    font-size: 1rem; /* 16px */
+  }
+}
