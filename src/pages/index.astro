@@ -7,17 +7,24 @@ import LatestPosts from "@components/LatestPosts.astro";
 const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
+
+const title = "I'm manuel.djs | Homepage";
+const description =
+  "A page where you will find my posts. I write about my experience in the continuously changing tech landscape, what I learn, and tech-related stuff that interests me, etc.";
+
+const bioSummary =
+  "I'm Manuel De Jesús (manuel.djs). A software developer who has worked as technical support. That role allowed me to provide support to customers in websites (mostly php-based ones, WordPress, Laravel, etc.). Moreover, I've worked with Astro.js either for freelancing purpose or personal projects. This is a place to share my experience, learn by sharing, and an excuse to write. I will share posts on Tuesday. ";
 ---
 
-<Layout title="Homepage" description="Lorem ipsum dolor sit amet">
+<Layout title={title} description={description}>
   <section class="mb-25 pt-10">
-    <div class="mb-4">
+    <div class="title-container">
       <h1 class="text-primary text-center font-bold italic">
         Welcome <span
           id="welcome-word"
           class="text-content inline-block transition-opacity duration-300 ease-in-out"
           >to</span
-        >!
+        > my blog!
       </h1>
     </div>
     <Box>
@@ -26,12 +33,7 @@ const posts = (await getCollection("blog"))
           >title="Software Developer"</span
         > /&gt;
       </h4>
-      <p slot="box-body" class="text-content mb-4">
-        I'm Manuel De Jesús (manuel.djs) a software developer who has been
-        around the web either providing support to Websites (mostly php-based
-        ones) or working on personal projects. This is my blog and excited to
-        share my knowledge and keep learning.
-      </p>
+      <p slot="box-body" class="text-content mb-4">{bioSummary}</p>
     </Box>
   </section>
   <LatestPosts {posts} />
@@ -44,7 +46,7 @@ const posts = (await getCollection("blog"))
     if (word) {
       word.style.opacity = "0";
       setTimeout(() => {
-        word.textContent = word.textContent === "to" ? "back" : "to";
+        word.textContent = word.textContent === "to" ? "back to" : "to";
         word.style.opacity = "1";
       }, 150);
     }
@@ -52,3 +54,23 @@ const posts = (await getCollection("blog"))
 
   setInterval(toggleWord, 5000);
 </script>
+
+<style>
+  .title-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    min-height: 7rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (width >= 640px) {
+    .title-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      place-items: center;
+      min-height: 3rem;
+      margin-bottom: 1rem;
+    }
+  }
+</style>

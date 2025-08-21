@@ -1,39 +1,150 @@
 ---
+import { Icon } from "astro-icon/components";
 import Layout from "@layouts/BaseLayout.astro";
+
+const title = "I'm manuel.djs | About Me";
+const description =
+  "Use this page to find information about my professional experience. Also, you can find a summary of my tech-related skills.";
 ---
 
-<Layout title="About Me" description="Learn more about me">
-  <div class="mb-4 px-4 pt-10">
-    <h1 class="text-primary">About Me 👋</h1>
-  </div>
-  <div class="text-content px-4">
-    <ul>
-      <li>
-        🏷️ I'm a full-stack developer who has worked with Astro.js, PHP and
-        WordPress support.
-      </li>
-      <li>
-        💻 Currently exploring Astro.js and React to build efficient,
-        user-friendly solutions.
-      </li>
-      <li>
-        🎯 Eager to learn more about software architecture, design patterns, and
-        best practices.
-      </li>
-      <li>
-        🏗️ Working on personal projects to sharpen my web development skills.
-      </li>
-      <li>🤝 Open to collaborating on open-source or web-focused projects.</li>
-      <li>
-        🔍 Ask me about technical support, web hosting, and how I apply that
-        background to dev work.
-      </li>
-    </ul>
-  </div>
-</Layout>
+<Layout title={title} description={description}>
+  <section class="aboutIntro mb-8">
+    <div class="mb-4 px-4 pt-10 italic">
+      <h1 class="text-primary group transition-colors">
+        About Me <Icon
+          name="mdi:hand-wave"
+          size={32}
+          class="text-primary/50 group-hover:text-primary inline"
+        />
+      </h1>
+    </div>
+    <div class="text-content px-4">
+      <ul class="transition-colors">
+        <li class="group">
+          <Icon
+            name="mdi:coffee"
+            size={15}
+            class="text-primary/50 group-hover:text-primary mr-2 inline"
+          />I'm a full-stack developer who has worked with Astro.js, PHP and
+          provided technical support for PHP-based websites.
+        </li>
+        <li class="group">
+          <Icon
+            name="mdi:coffee"
+            size={15}
+            class="text-primary/50 group-hover:text-primary mr-2 inline"
+          />Currently exploring Astro.js and React as a way to increase the
+          amount of tools I work with. This allows me to deal with web
+          application that requires lots of interaction and content-driven
+          websites.
+        </li>
+        <li class="group">
+          <Icon
+            name="mdi:coffee"
+            size={15}
+            class="text-primary/50 group-hover:text-primary mr-2 inline"
+          />Eager to learn more about different tools and what makes them
+          special to solve specific problems. Also, learn more about software
+          architecture, design patterns, and best practices.
+        </li>
+        <li class="group">
+          <Icon
+            name="mdi:coffee"
+            size={15}
+            class="text-primary/50 group-hover:text-primary mr-2 inline"
+          />Working on personal projects, and freelancing, to sharpen my web
+          development skills.
+        </li>
+        <li class="group">
+          <Icon
+            name="mdi:coffee"
+            size={15}
+            class="text-primary/50 group-hover:text-primary mr-2 inline"
+          />Open to collaborating on open-source or web-focused projects.
+        </li>
+        <li class="group">
+          <Icon
+            name="mdi:coffee"
+            size={15}
+            class="text-primary/50 group-hover:text-primary mr-2 inline"
+          />Ask me about technical support, and web hosting, and how I apply
+          that background to dev work.
+        </li>
+      </ul>
+    </div>
+  </section>
 
-<style>
-  li {
-    padding-bottom: 0.3rem;
-  }
-</style>
+  <section class="skills mb-8">
+    <div class="mb-4 px-4 pt-10 italic">
+      <h2 class="text-primary">Skills</h2>
+    </div>
+    <div class="text-content px-4">
+      <ul class="">
+        <li class="group">
+          <span class="text-primary/50 group-hover:text-primary mr-1"
+            ><Icon
+              name="mdi:laptop"
+              size={15}
+              class="mr-2 inline"
+            />Frontend:</span
+          >Astro.js, Typescript, JavaScript, Vite
+        </li>
+        <li class="group">
+          <span class="text-primary/50 group-hover:text-primary mr-1"
+            ><Icon name="mdi:laptop" size={15} class="mr-2 inline" />Backend and
+            APIs:</span
+          >PHP, REST APIs, Laravel ORM
+        </li>
+        <li class="group">
+          <span class="text-primary/50 group-hover:text-primary mr-1">
+            <Icon name="mdi:laptop" size={15} class="mr-2 inline" />Databases
+            and Infrastructure:</span
+          >MYSQL, Managed Hosting (cPanel)
+          <li class="group">
+            <span class="text-primary/50 group-hover:text-primary mr-1"
+              ><Icon name="mdi:laptop" size={15} class="mr-2 inline" />Testing
+              and Quality:</span
+            >PHPUnit, PHPstan, static analysis, and coding standards tool
+          </li>
+          <li class="group">
+            <span class="text-primary/50 group-hover:text-primary mr-1"
+              ><Icon name="mdi:laptop" size={15} class="mr-2 inline" />Tooling
+              and DevOps:</span
+            > GitHub Actions, Cloudflare
+          </li>
+          <li class="group">
+            <span class="text-primary/50 group-hover:text-primary mr-1"
+              ><Icon
+                name="mdi:laptop"
+                size={15}
+                class="mr-2 inline"
+              />Collaboration:</span
+            > Slack, Jira, GitHub Issues
+          </li>
+          <li class="group">
+            <span class="text-primary/50 group-hover:text-primary mr-1"
+              ><Icon name="mdi:laptop" size={15} class="mr-2 inline" />Soft
+              Skills:</span
+            > Communication, Collaboration, Problem-Solving, Curiosity, Continuous
+            learning, Attention to Details
+          </li>
+          <li class="group">
+            <span class="text-primary/50 group-hover:text-primary mr-1">
+              <Icon
+                name="mdi:laptop"
+                size={15}
+                class="mr-2 inline"
+              />Languages:</span
+            > Spanish (native), English (Full professional proficiency)
+          </li>
+        </li>
+      </ul>
+    </div>
+
+    <style>
+      li {
+        padding-bottom: 0.3rem;
+      }
+    </style>
+  </section>
+</Layout>

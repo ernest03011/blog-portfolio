@@ -8,11 +8,15 @@ import Heading from "@components/Heading.astro";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const title = "I'm manuel.djs | Blog";
+const description =
+  "A page where you will find my posts. I write about my experience in the continuously changing tech landscape, what I learn, and tech-related stuff that interests me, etc.";
 ---
 
-<Layout title="Blog page" description="A list of my posts">
-  <section class="pt-4">
-    <Heading title="Welcome to the Blog!" hasSeparator={true} />
+<Layout title={title} description={description}>
+  <section class="pt-4 italic">
+    <Heading title="All Posts" hasSeparator={true} />
   </section>
   <section class="text-content">
     {posts.map((post) => <PostPreview post={post} variant="moderate" />)}
