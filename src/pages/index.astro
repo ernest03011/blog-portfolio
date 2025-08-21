@@ -24,7 +24,7 @@ const bioSummary =
           id="welcome-word"
           class="text-content inline-block transition-opacity duration-300 ease-in-out"
           >to</span
-        >!
+        > my blog!
       </h1>
     </div>
     <Box>
@@ -46,7 +46,7 @@ const bioSummary =
     if (word) {
       word.style.opacity = "0";
       setTimeout(() => {
-        word.textContent = word.textContent === "to" ? "back" : "to";
+        word.textContent = word.textContent === "to" ? "back to" : "to";
         word.style.opacity = "1";
       }, 150);
     }
