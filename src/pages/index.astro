@@ -7,9 +7,13 @@ import LatestPosts from "@components/LatestPosts.astro";
 const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
+
+const title = "I'm manuel.djs | Homepage";
+const description =
+  "A page where you will find my posts. I write about my experience in the continuously changing tech landscape, what I learn, and tech-related stuff that interests me, etc.";
 ---
 
-<Layout title="Homepage" description="Lorem ipsum dolor sit amet">
+<Layout title={title} description={description}>
   <section class="mb-25 pt-10">
     <div class="mb-4">
       <h1 class="text-primary text-center font-bold italic">
