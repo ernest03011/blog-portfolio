@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import Layout from "@layouts/BaseLayout.astro";
 
 const title = "I'm manuel.djs | About Me";
@@ -9,34 +10,64 @@ const description =
 <Layout title={title} description={description}>
   <section class="aboutIntro mb-8">
     <div class="mb-4 px-4 pt-10 italic">
-      <h1 class="text-primary">About Me 👋</h1>
+      <h1 class="text-primary group transition-colors">
+        About Me <Icon
+          name="mdi:hand-wave"
+          size={32}
+          class="text-primary/50 group-hover:text-primary inline"
+        />
+      </h1>
     </div>
     <div class="text-content px-4">
-      <ul>
-        <li>
-          🏷️ I'm a full-stack developer who has worked with Astro.js, PHP and
+      <ul class="transition-colors">
+        <li class="group">
+          <Icon
+            name="mdi:coffee"
+            size={15}
+            class="text-primary/50 group-hover:text-primary mr-2 inline"
+          />I'm a full-stack developer who has worked with Astro.js, PHP and
           provided technical support for PHP-based websites.
         </li>
-        <li>
-          💻 Currently exploring Astro.js and React as a way to increase the
+        <li class="group">
+          <Icon
+            name="mdi:coffee"
+            size={15}
+            class="text-primary/50 group-hover:text-primary mr-2 inline"
+          />Currently exploring Astro.js and React as a way to increase the
           amount of tools I work with. This allows me to deal with web
           application that requires lots of interaction and content-driven
           websites.
         </li>
-        <li>
-          🎯 Eager to learn more about different tools and what makes them
+        <li class="group">
+          <Icon
+            name="mdi:coffee"
+            size={15}
+            class="text-primary/50 group-hover:text-primary mr-2 inline"
+          />Eager to learn more about different tools and what makes them
           special to solve specific problems. Also, learn more about software
           architecture, design patterns, and best practices.
         </li>
-        <li>
-          🏗️ Working on personal projects, and freelancing, to sharpen my web
+        <li class="group">
+          <Icon
+            name="mdi:coffee"
+            size={15}
+            class="text-primary/50 group-hover:text-primary mr-2 inline"
+          />Working on personal projects, and freelancing, to sharpen my web
           development skills.
         </li>
-        <li>
-          🤝 Open to collaborating on open-source or web-focused projects.
+        <li class="group">
+          <Icon
+            name="mdi:coffee"
+            size={15}
+            class="text-primary/50 group-hover:text-primary mr-2 inline"
+          />Open to collaborating on open-source or web-focused projects.
         </li>
-        <li>
-          🔍 Ask me about technical support, and web hosting, and how I apply
+        <li class="group">
+          <Icon
+            name="mdi:coffee"
+            size={15}
+            class="text-primary/50 group-hover:text-primary mr-2 inline"
+          />Ask me about technical support, and web hosting, and how I apply
           that background to dev work.
         </li>
       </ul>
