@@ -11,6 +11,9 @@ const posts = (await getCollection("blog"))
 const title = "I'm manuel.djs | Homepage";
 const description =
   "A page where you will find my posts. I write about my experience in the continuously changing tech landscape, what I learn, and tech-related stuff that interests me, etc.";
+
+const bioSummary =
+  "I'm Manuel De Jesús (manuel.djs). A software developer who has worked as technical support. That role allowed me to provide support to customers in websites (mostly php-based ones, WordPress, Laravel, etc.). Moreover, I've worked with Astro.js either for freelancing purpose or personal projects. This is a place to share my experience, learn by sharing, and an excuse to write.";
 ---
 
 <Layout title={title} description={description}>
@@ -30,12 +33,7 @@ const description =
           >title="Software Developer"</span
         > /&gt;
       </h4>
-      <p slot="box-body" class="text-content mb-4">
-        I'm Manuel De Jesús (manuel.djs) a software developer who has been
-        around the web either providing support to Websites (mostly php-based
-        ones) or working on personal projects. This is my blog and excited to
-        share my knowledge and keep learning.
-      </p>
+      <p slot="box-body" class="text-content mb-4">{bioSummary}</p>
     </Box>
   </section>
   <LatestPosts {posts} />
