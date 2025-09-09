@@ -1,0 +1,73 @@
+---
+title: "How to Fix 'Could Not Find Sharp' Error When Deploying Astro Websites"
+description: "The 'Could Not Find Sharp' error is usually caused by missing the sharp dependency. This error appears when deploying the website, even if it works on your computer. Moreover, this issue occurs when using pnpm and the Astro Image component."
+pubDate: "Sep 09 2025"
+heroImage: ""
+---
+
+Summary: The 'Could Not Find Sharp' error is usually caused by missing the sharp dependency. This error appears when deploying the website, even if it works on your computer. Moreover, this issue occurs when using pnpm and the Astro Image component.
+
+<br />
+<br />
+#### The Lesson
+<br />I was working with Astro, and I was using its Image component. I was doing
+that because this component provides optimization by default. And it was working
+great on my computer. But when I deployed it, it failed. I tried with different
+providers such as Netlify, Vercel, and Cloudflare Pages. And yet, the deployment
+kept failing.
+
+<br />
+
+```
+MissingSharp: Could not find Sharp. Please install Sharp
+(`sharp`) manually into your project or migrate to another image service.
+```
+
+<br />
+This was confusing to me. I spent a couple of hours trying to understand this
+error. I reproduced this error on different hosting providers. And I was unable
+to fix it. So, I decided to keep working on another part of this project.
+<br />
+One or two days later, I fixed it. How? I found a thread on the [Netlify
+community page](https://answers.netlify.com/t/could-not-find-sharp/121098) with
+a similar error. It said that the issue was caused by missing the sharp library.
+Then, I was able to confirm that it was the issue after installing it. And I
+confirmed that the Astro documentation recommends installing it when using pnpm
+(Performant Node Package Manager).
+<br />
+This was a reminder for myself. Making sure I take more time reading the error
+logs and double-checking the documentation.
+<br />
+<br />
+#### How to fix it?
+<br />
+To fix this error, you need to install the sharp library as recommended in the
+Astro documentation. This can be done by running this command:
+<br />
+``` pnpm add sharp ```.
+
+<br />
+<br />
+#### Providing Context
+<br />
+To explain why this happens, it is good to talk about Astro Image Component and
+pnpm.
+<br />
+Astro provides an image component that includes optimization by default. For
+instance, images are lazy-loaded. Decoding attribute is set as async to avoid
+render blocking. Moreover, the fetchPriority attribute is set to auto. All of
+this is part of the optimization that this component provides.
+<br />
+This image component provided by Astro is powered by Sharp. This is an image
+processing library, and it is the default one. Yet, Astro allows you to install
+another one, or even tinker with this one.
+<br />
+[Astro Default Image Service -
+Link](https://docs.astro.build/en/guides/images/#default-image-service)
+
+<br />
+pnpm is sometimes used instead of npm or other packages. This is because,
+depending on the context, it can be faster, efficient, and save disk space.
+<br />
+But, pnpm strict dependency management causes that we need to install the sharp
+library even when it is an Astro dependency.
