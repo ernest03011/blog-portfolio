@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin '@tailwindcss/typography';
 
 /* Tailwind Color Theme */
 @theme {
@@ -92,5 +93,21 @@ small {
 
   h5 {
     font-size: 1rem; /* 16px */
+  }
+
+  .prose-container h1 {
+    font-size: 1.99rem; /* ~31.8px */
+  }
+  .prose-container h2 {
+    font-size: 1.592rem; /* ~25.5px */
+  }
+  .prose-container h3 {
+    font-size: 1.274rem; /* ~20.4px */
+  }
+  .prose-container h4 {
+    font-size: 1.019rem; /* ~16.3px */
+  }
+  .prose-container h5 {
+    font-size: 0.815rem; /* ~13px */
   }
 }
