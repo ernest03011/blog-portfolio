@@ -7,7 +7,7 @@ heroImage: ""
 
 Summary: The 'Could Not Find Sharp' error is usually caused by missing the sharp dependency. This error appears when deploying the website, even if it works on your computer. Moreover, this issue occurs when using pnpm and the Astro Image component.
 
-#### The Lesson
+### The Lesson
 
 I was working with Astro, and I was using its Image component. I was doing that because this component provides optimization by default. And it was working great on my computer. But when I deployed it, it failed. I tried with different providers such as Netlify, Vercel, and Cloudflare Pages. And yet, the deployment kept failing.
 
@@ -25,7 +25,7 @@ One or two days later, I fixed it. How? I found a thread on the [Netlify communi
 This was a reminder for myself. Making sure I take more time reading the error
 logs and double-checking the documentation.
 
-#### How to fix it?
+### How to fix it?
 
 To fix this error, you need to install the sharp library as recommended in the
 Astro documentation. This can be done by running this command:
@@ -34,7 +34,7 @@ Astro documentation. This can be done by running this command:
 pnpm add sharp
 ```
 
-#### Providing Context
+### Providing Context
 
 To explain why this happens, it is good to talk about Astro Image Component and
 pnpm.
