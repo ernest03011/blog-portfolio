@@ -28,12 +28,18 @@ This was confusing to me. I spent a couple of hours trying to understand this
 error. I reproduced this error on different hosting providers. And I was unable
 to fix it. So, I decided to keep working on another part of this project.
 <br />
-One or two days later, I fixed it. How? I found a thread on the [Netlify
-community page](https://answers.netlify.com/t/could-not-find-sharp/121098) with
-a similar error. It said that the issue was caused by missing the sharp library.
-Then, I was able to confirm that it was the issue after installing it. And I
-confirmed that the Astro documentation recommends installing it when using pnpm
-(Performant Node Package Manager).
+One or two days later, I fixed it. How? I found a thread on the
+<a
+  href="https://answers.netlify.com/t/could-not-find-sharp/121098"
+  target="_blank"
+  class="hover:text-accent text-accent/60 inline"
+>
+  Netlify community page
+</a>
+with a similar error. It said that the issue was caused by missing the sharp
+library. Then, I was able to confirm that it was the issue after installing it.
+And I confirmed that the Astro documentation recommends installing it when using
+pnpm (Performant Node Package Manager).
 <br />
 This was a reminder for myself. Making sure I take more time reading the error
 logs and double-checking the documentation.
@@ -63,10 +69,14 @@ this is part of the optimization that this component provides.
 <br />
 This image component provided by Astro is powered by Sharp. This is an image
 processing library, and it is the default one. Yet, Astro allows you to install
-another one, or even tinker with this one.
-<br />
-[Astro Default Image Service -
-Link](https://docs.astro.build/en/guides/images/#default-image-service)
+another one, or even tinker with this one
+<a
+  href="https://docs.astro.build/en/guides/images/#default-image-service"
+  target="_blank"
+  class="hover:text-accent text-accent/60"
+>
+  Astro Default Image Service.
+</a>
 
 <br />
 pnpm is sometimes used instead of npm or other packages. This is because,
