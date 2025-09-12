@@ -1,0 +1,58 @@
+---
+title: "React, its hooks, and avoiding getting caught"
+description: "I take this opportunity to reflect on my experience with React so far. I write about its hooks, which are part of its foundation, some interesting aspects, and some complex aspects when navigating the React Ecosystem for the first time."
+pubDate: "Sep 12 2025"
+heroImage: ""
+---
+
+Summary: I take this opportunity to reflect on my experience with React so far. I write about its hooks, which are part of its foundation, some interesting aspects, and some complex aspects when navigating the React Ecosystem for the first time. 
+
+### React
+
+React is one of the most popular frontend frameworks. And it is a secure investment when pursuing a career as a web developer, given the strong demand in the market
+
+It is a powerful tool and allows for making a website pretty interactive. Furthermore, to use it and take advantage of its strength, we need to get familiar with some concepts. These concepts make up its foundation: Virtual Dom, Re-rendering, Hooks, JSX, Props, State, Component Lifecycle, etc. 
+
+These core concepts are part of what makes React Powerful. And at the same time, some of them are what make it have a bigger learning curve compared to other frameworks. 
+
+### Its hooks
+
+Hooks are special functions that allow developers to take advantage of React features. Also, they are a big part of the React ecosystem. 
+
+But they increase the number of things you have to learn and understand their use cases. Because proper understanding helps implement these built-in tools that the framework provides properly. This means being aware of the problem being solved, the context, tradeoffs, and so on.
+
+Some hooks are: useState, useEffect, useContext, useRef, useReducer, useMemo, useCallback, etc. 
+
+For instance, I was reading about useMemo and useCallback, and I ended up learning about re-rendering. These are great articles. I was geeking over React’s re-rendering details. 
+
+Learning about topics such as how React uses a Virtual Dom, and comparing changes between the virtual Dom. As well as why component re-render, the state changes, the props, and the descendant components are being re-rendered.
+
+At the same time, learning about pure components, avoiding unwanted re-renders. And the concept of pure components and how objects cause components to re-render because of are stored by reference in memory.  
+
+These are the articles that explain some of these concepts easily and interactively for a better understanding: 
+
+- [Why React Re-renders - Josh Comeau](https://www.joshwcomeau.com/react/why-react-re-renders/)
+- [useMemo and useCallback - Josh Comeau](https://www.joshwcomeau.com/react/usememo-and-usecallback/)
+
+Moreover, I’ve also listened to a podcast, which talked about how useMemo and useCallback can be overused.
+
+- [The useless useCallback: React performance myths unpacked, with Dominik Dorfmeister](https://www.youtube.com/watch?v=VIvEsO7g1gw&list=PLWtgi1_itpXnrbMZqVpa8Hk2WckiYTUqv&index=12) 
+
+So, these kinds of interactions lead me to think about “what the best situation for using some of these hooks is”.
+
+### Avoiding getting caught 
+
+The nature of React being quite interactive (the virtual Dom, re-rendering, the component lifecycle, its hooks) helps create the stage for a great conversation. A conversation about performance, scaling, how to organize components, and the use of patterns, etc. 
+
+Yet, when learning React, it is great to avoid getting caught in these kinds of conversations with yourself that get to a point where they result in the analysis-paralysis dilemma. 
+
+Keep building, keep learning, and keep iterating your software. This makes a better approach for dealing with the React Ecosystem. As well as delivering software with great performance. This way, we keep moving forward, refactoring, while learning from experience and things you watch or read in articles (but not this one). 
+
+These are my thoughts about it so far. I’ll for sure come back for the second part. I will cover one of these hooks deeper. Or I could talk about a project and why I decided to use certain hooks. 
+
+External Articles: If you want to keep reading. 
+
+- [React Reconciliation algorithm- Ravi Chandola](https://medium.com/javarevisited/react-reconciliation-algorithm-86e3e22c1b40)
+- [Before you memo - Overreacted](https://overreacted.io/before-you-memo/)
+- [The useless useCallback - Tkdodo](https://tkdodo.eu/blog/the-useless-use-callback)
+- [Avoiding useEffect with callback refs - Tkdodo](https://tkdodo.eu/blog/avoiding-use-effect-with-callback-refs)
