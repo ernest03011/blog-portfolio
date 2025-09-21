@@ -1,7 +1,12 @@
 /* Print Stylesheet for Blog Posts */
 @media print {
   /* Hide non-essential UI */
-  nav, header, footer, .sidebar, .ad, .no-print {
+  nav,
+  header,
+  footer,
+  .sidebar,
+  .ad,
+  .no-print {
     display: none !important;
   }
 
@@ -15,7 +20,11 @@
   }
 
   /* Headings */
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     color: #000;
     page-break-after: avoid;
     margin-top: 1.5em;
@@ -23,7 +32,10 @@
   }
 
   /* Paragraphs and lists */
-  p, ul, ol, blockquote {
+  p,
+  ul,
+  ol,
+  blockquote {
     margin-bottom: 1em;
   }
 
@@ -38,7 +50,9 @@
   }
 
   /* Images and tables */
-  img, table, blockquote {
+  img,
+  table,
+  blockquote {
     page-break-inside: avoid;
   }
   img {
@@ -47,7 +61,8 @@
   }
 
   /* Page break control */
-  article, section {
+  article,
+  section {
     page-break-before: avoid;
     page-break-after: auto;
   }
