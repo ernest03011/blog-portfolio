@@ -30,8 +30,7 @@ const variantConfig = {
 
 const cardDesignConfig = {
   default: "border-divider rounded-lg border-1",
-  primary:
-    "bg-surface-elevated hover:bg-surface-hover border-divider rounded-lg border-1 border-solid shadow-lg",
+  primary: "bg-surface-elevated hover:bg-surface-hover border-divider rounded-lg border-1 border-solid shadow-lg",
   secondary:
     "hover:rounded-xl hover:shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:ring-1 hover:ring-border hover:ring-accent transition-all duration-300",
 };
@@ -51,23 +50,14 @@ const cardContainerDesign = cardDesignConfig[cardDesign];
   </h4>
   <!-- Description  -->
   <div>
-    {
-      showDescription && (
-        <p class="text-foreground my-4 pl-0.5 text-base/7">
-          {post.data.description}
-        </p>
-      )
-    }
+    {showDescription && <p class="text-foreground my-4 pl-0.5 text-base/7">{post.data.description}</p>}
   </div>
   <!-- Date and Read link -->
   <div>
     <p class="">
       <FormattedDate date={post.data.pubDate} />
     </p>
-    <a
-      class="group-hover:text-accent flex items-center"
-      href={`/blog/${post.slug}`}
-    >
+    <a class="group-hover:text-accent flex items-center" href={`/blog/${post.slug}`}>
       Read
       <Icon name="mdi:chevron-double-right" class="ml-2" size={20} />
     </a>

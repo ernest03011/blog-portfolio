@@ -5,9 +5,7 @@ import Layout from "@layouts/BaseLayout.astro";
 import PostPreview from "@components/PostPreview.astro";
 import Heading from "@components/Heading.astro";
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const title = "I'm manuel.djs | Blog";
 const description =
