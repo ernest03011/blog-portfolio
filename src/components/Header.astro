@@ -2,6 +2,7 @@
 import HeaderLink from "./HeaderLink.astro";
 import { Icon } from "astro-icon/components";
 import { Nav } from "@data/navigation";
+import { SocialLinks } from "@data/social-links";
 ---
 
 <header class="sticky top-0 z-50 border-b shadow-md backdrop-blur-lg">
@@ -11,14 +12,16 @@ import { Nav } from "@data/navigation";
       {Nav.map((nav) => <HeaderLink href={nav.href}>{nav.label}</HeaderLink>)}
     </div>
     <div class="social-links text-accent">
-      <a href="https://www.linkedin.com/in/manueldjesus/" target="_blank">
-        <span class="sr-only">Go to my Linkedin profile</span>
-        <Icon name="mdi:linkedin" size={32} />
-      </a>
-      <a href="https://github.com/ernest03011" target="_blank">
-        <span class="sr-only">Go to my GitHub repo</span>
-        <Icon name="mdi:github" size={32} />
-      </a>
+      {
+        SocialLinks.map((socialLink) => {
+          return (
+            <a href={socialLink.href} target="_blank">
+              <span class="sr-only">{socialLink.srMessage}</span>
+              <Icon name={socialLink.iconName} size={32} />
+            </a>
+          );
+        })
+      }
     </div>
   </nav>
 </header>
