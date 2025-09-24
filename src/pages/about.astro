@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import Layout from "@layouts/BaseLayout.astro";
+import { Skills } from "@data/skills";
 
 const title = "I'm manuel.djs | About Me";
 const description =
@@ -53,46 +54,19 @@ const description =
     </div>
     <div class="text-content px-4">
       <ul class="">
-        <li class="group">
-          <span class="text-primary/50 group-hover:text-primary mr-1"
-            ><Icon name="mdi:laptop" size={15} class="mr-2 inline" />Frontend:</span
-          >React, Astro.js, Typescript, JavaScript, Vite
-        </li>
-        <li class="group">
-          <span class="text-primary/50 group-hover:text-primary mr-1"
-            ><Icon name="mdi:laptop" size={15} class="mr-2 inline" />Backend and APIs:</span
-          >PHP, REST APIs, Laravel ORM
-        </li>
-        <li class="group">
-          <span class="text-primary/50 group-hover:text-primary mr-1">
-            <Icon name="mdi:laptop" size={15} class="mr-2 inline" />Databases and Infrastructure:</span
-          >MYSQL, Managed Hosting (cPanel)
-          <li class="group">
-            <span class="text-primary/50 group-hover:text-primary mr-1"
-              ><Icon name="mdi:laptop" size={15} class="mr-2 inline" />Testing and Quality:</span
-            >PHPUnit, PHPstan, static analysis, and coding standards tool
-          </li>
-          <li class="group">
-            <span class="text-primary/50 group-hover:text-primary mr-1"
-              ><Icon name="mdi:laptop" size={15} class="mr-2 inline" />Tooling and DevOps:</span
-            > GitHub Actions, Cloudflare
-          </li>
-          <li class="group">
-            <span class="text-primary/50 group-hover:text-primary mr-1"
-              ><Icon name="mdi:laptop" size={15} class="mr-2 inline" />Collaboration:</span
-            > Slack, Jira, GitHub Issues
-          </li>
-          <li class="group">
-            <span class="text-primary/50 group-hover:text-primary mr-1"
-              ><Icon name="mdi:laptop" size={15} class="mr-2 inline" />Soft Skills:</span
-            > Communication, Collaboration, Problem-Solving, Curiosity, Continuous learning, Attention to Details
-          </li>
-          <li class="group">
-            <span class="text-primary/50 group-hover:text-primary mr-1">
-              <Icon name="mdi:laptop" size={15} class="mr-2 inline" />Languages:</span
-            > Spanish (native), English (Full professional proficiency)
-          </li>
-        </li>
+        {
+          Skills.map((skill) => {
+            return (
+              <li class="group">
+                <span class="text-primary/50 group-hover:text-primary mr-1">
+                  <Icon name={skill.iconName} size={15} class="mr-2 inline" />
+                  {skill.title}:
+                </span>
+                {skill.description}
+              </li>
+            );
+          })
+        }
       </ul>
     </div>
 
