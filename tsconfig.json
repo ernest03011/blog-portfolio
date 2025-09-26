@@ -3,11 +3,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@assets/*": ["src/assets/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@styles/*": ["src/styles/*"],
-      "@data/*": ["src/data/*"]
+      "@components/*": ["./src/components/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@data/*": ["./src/data/*"]
     },
     "strictNullChecks": true,
     "verbatimModuleSyntax": true
