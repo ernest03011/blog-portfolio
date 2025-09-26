@@ -9,7 +9,8 @@
       "@styles/*": ["src/styles/*"],
       "@data/*": ["src/data/*"]
     },
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "verbatimModuleSyntax": true
   },
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"]
