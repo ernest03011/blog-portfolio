@@ -2,10 +2,11 @@
 import { Icon } from "astro-icon/components";
 import Layout from "@layouts/BaseLayout.astro";
 import { Skills } from "@data/skills";
+import { Pages } from "@data/pages";
+import { getPageKey } from "@utils/page";
 
-const title = "I'm manuel.djs | About Me";
-const description =
-  "Use this page to find information about my professional experience. Also, you can find a summary of my tech-related skills.";
+const { pathname } = Astro.url;
+const { title, description } = Pages[getPageKey(pathname)];
 ---
 
 <Layout title={title} description={description}>
