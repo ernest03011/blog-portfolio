@@ -3,11 +3,12 @@ import HeaderLink from "./HeaderLink.astro";
 import { Icon } from "astro-icon/components";
 import { Nav } from "@data/navigation";
 import { SocialLinks } from "@data/social-links";
+import { Site } from "@data/site";
 ---
 
 <header class="sticky top-0 z-50 border-b shadow-md backdrop-blur-lg">
   <nav class="">
-    <h2 class="text-primary ff-jetbrains-mono"><a href="/">manuel.djs</a></h2>
+    <h2 class="text-primary ff-jetbrains-mono"><a href="/">{Site.title}</a></h2>
     <div class="internal-links text-content">
       {Nav.map((nav) => <HeaderLink href={nav.href}>{nav.label}</HeaderLink>)}
     </div>

@@ -3,17 +3,16 @@ import { getCollection } from "astro:content";
 import Box from "@components/Box.astro";
 import Layout from "@layouts/BaseLayout.astro";
 import LatestPosts from "@components/LatestPosts.astro";
+import { Site } from "@data/site";
+import { Pages } from "@data/pages";
+import { getPageKey } from "@utils/page";
 
 const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 
-const title = "I'm manuel.djs | Homepage";
-const description =
-  "A page where you will find my posts. I write about my experience in the continuously changing tech landscape, what I learn, and tech-related stuff that interests me, etc.";
-
-const bioSummary =
-  "I'm Manuel De Jesús (manuel.djs). A software developer who has worked as technical support. That role allowed me to provide support to customers in websites (mostly php-based ones, WordPress, Laravel, etc.). Moreover, I've worked with React and Astro.js either for freelancing purpose or personal projects. This is a place to share my experience, learn by sharing, and an excuse to write. I will share posts on Tuesday. ";
+const { pathname } = Astro.url;
+const { title, description } = Pages[getPageKey(pathname)];
 ---
 
 <Layout title={title} description={description}>
@@ -29,7 +28,7 @@ const bioSummary =
       <h4 slot="box-heading" class="text-primary mb-1">
         &lt;AuthorBioSummary <span class="hidden md:inline">title="Software Developer"</span> /&gt;
       </h4>
-      <p slot="box-body" class="text-content mb-4">{bioSummary}</p>
+      <p slot="box-body" class="text-content mb-4">{Site.author.bioSummary}</p>
     </Box>
   </section>
   <LatestPosts {posts} />

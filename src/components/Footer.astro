@@ -2,11 +2,13 @@
 import { Icon } from "astro-icon/components";
 const today = new Date();
 import { SocialLinks } from "@data/social-links";
+import { Site } from "@data/site";
 ---
 
 <footer class="border-divider border-t-1 border-solid">
   <p class="text-primary">
-    &copy; {today.getFullYear()} Manuel De Jesús. All rights reserved.
+    &copy; {today.getFullYear()}
+    {Site.author.name}. All rights reserved.
   </p>
   <div class="social-links text-accent">
     {

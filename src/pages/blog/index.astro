@@ -4,12 +4,13 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/BaseLayout.astro";
 import PostPreview from "@components/PostPreview.astro";
 import Heading from "@components/Heading.astro";
+import { Pages } from "@data/pages";
+import { getPageKey } from "@utils/page";
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const title = "I'm manuel.djs | Blog";
-const description =
-  "A page where you will find my posts. I write about my experience in the continuously changing tech landscape, what I learn, and tech-related stuff that interests me, etc.";
+const { pathname } = Astro.url;
+const { title, description } = Pages[getPageKey(pathname)];
 ---
 
 <Layout title={title} description={description}>
