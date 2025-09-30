@@ -3,6 +3,10 @@ import { Icon } from "astro-icon/components";
 const today = new Date();
 import { SocialLinks } from "@data/social-links";
 import { Site } from "@data/site";
+import { Image } from "astro:assets";
+
+import builtWithAstroImage from "@assets/images/built-with-astro.webp";
+import friendsOfHoustonGif from "@assets/gif/friends-of-houston.gif";
 ---
 
 <footer class="border-divider border-t-1 border-solid">
@@ -21,6 +25,15 @@ import { Site } from "@data/site";
         );
       })
     }
+  </div>
+  <!-- Astro Webring badges -->
+  <div class="mt-2 flex justify-center items-center gap-2">
+    <a href="https://astro-webrings.lou.gg/next?site=manuel.djs&ring=built-with-astro">
+      <Image src={builtWithAstroImage} alt="Built with Astro" width="88" height="31" />
+    </a>
+    <a href="https://astro-webrings.lou.gg/next?site=manuel.djs&ring=friends-of-houston">
+      <Image src={friendsOfHoustonGif} alt="Friends of Houston" width="88" height="31" />
+    </a>
   </div>
 </footer>
 <style>
