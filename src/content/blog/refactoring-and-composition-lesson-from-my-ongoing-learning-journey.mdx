@@ -1,0 +1,49 @@
+---
+title: "Refactoring and Composition: Lesson from My Ongoing Learning Journey"
+description: "I’m using this opportunity to reflect on what I’ve been learning recently.  Understanding how to approach refactoring, to managing state effectively in React. I’ve also been exploring how composition and the Single Responsibility Principle contribute to building software that’s more testable, maintainable, and scalable."
+pubDate: "Nov 8 2025"
+heroImage: ""
+---
+
+Summary: I’m using this opportunity to reflect on what I’ve been learning recently.  Understanding how to approach refactoring, to managing state effectively in React. I’ve also been exploring how composition and the Single Responsibility Principle contribute to building software that’s more testable, maintainable, and scalable.
+
+
+### Introduction
+
+I have not posted recently, and I have been interacting with some code. One of those codebases is an old web application that I wrote using vanilla JavaScript a while ago. It was around 3 years ago. The other interaction has been because of my mentorship; I had to refactor a code to put in practice some concepts. 
+
+These two interactions have allowed me to get better with React, and It has also made me think about how I can approach refactoring a codebase. 
+
+#### Refactoring an old web application
+
+When I was refactoring the website created with Vanilla JavaScript, I wanted to improve the codebase. It was a mess to maintain, and this shows me how much I have learned compared to when I created that web application. I also wanted to take advantage of the interactivity provided by some of these modern frameworks. These frameworks allowed to avoid interacting with the DOM (Document Object Model) directly. 
+
+I could have kept using vanilla JavaScript, and use web components, and I could still improve the old codebase. Also, I could have used a simpler framework such as Qwik, SolidJS or Preact,. However, I decided to use React since I have been learning that one, and this would serve as another practice while using React. 
+
+I chose to create another Github Repository for the new version. Also, I decided to refactor the website to a point that it works first. I did this knowing the presentation and logic will be too coupled, or that there were going to be big components. Since I found it simpler to do the refactoring in two parts. Having the website working with React, Vite, updated packages, and then, I will focus on improving the components by using composition and single responsibility principles, etc.
+
+### Mentorship and what I have been learning
+
+The other interaction was the refactoring of a web application in the Mentorship I’m enrolled in. This module was about conditional rendering, composition and Single Responsibility Principles. 
+
+This module helped me understand and get deeper knowledge about these concepts and managing state. Having in mind that is good practice to have Dump (presentational) and Smart/Container (Logic) components. 
+
+Also, being more mindful about the component where the state should live in. If it is just one component, keep it local to one component. If the state is used by sibling components, make it live in the parent component. Prop drilling could be okay depending on the size of the application, the kind of state, if it does not change frequently, and how deep the state is passed through. It gets to a point that is better to use the Context Hook. And that is a tool that needs to be used in a conscious way, since it is a global state, and I need to decide what kind of state is, why it should be global, where I place the Context provider, how frequent this state updates. 
+
+It gets to a point when it is better to use a library such as Zutand, Tanstack Query, and nuqs. This post provides a detailed opinion about why some libraries can be better: [TL;DR: What State Management Really Looks Like in 2025](https://www.developerway.com/posts/react-state-management-2025#tl-dr-what-state-management-really-looks-like-in-2025)
+
+Some of these learnings go beyond React, and it can be applied in other FrontEnd frameworks. And I would say that even to any other languages. 
+
+
+### Associating the knowledge to other context
+
+Some of these learnings go beyond React, and it can be applied in other FrontEnd frameworks. And I would say that even to any other languages. 
+
+I remember when I was learning PHP and object-oriented programming, I studied the SOLID principles. SOLID is an acronym for five object-oriented design principles: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion principles. So, this lets me know that Single Responsibility is a principle that goes beyond languages or frameworks. As well as, learning about the importance of having entities like classes, components, objects that take care of one single responsibility.
+
+### External Articles: If you want to keep reading. 
+
+- [React State Management in 2025: What You Actually Need](https://www.developerway.com/posts/react-state-management-2025)
+- [Structuring State in React: 5 Essential Patterns](https://certificates.dev/blog/structuring-state-in-react-5-essential-patterns)
+- [When to Use Local vs. Global State in Frontend Development](https://blog.pixelfreestudio.com/when-to-use-local-vs-global-state-in-frontend-development/)
+- [Managing State](https://react.dev/learn/managing-state)

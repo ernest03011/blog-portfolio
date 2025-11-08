@@ -12,7 +12,9 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-
+  experimental: {
+    csp: true,
+  },
   integrations: [mdx(), // Icon integration requires specific setting when using server or hybrid
   // to avoid that all icons from the library (mdi is being used) are installed
   // https://www.astroicon.dev/reference/configuration/
