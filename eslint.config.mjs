@@ -9,7 +9,6 @@ export default antfu({
   typescript: true,
   react: true,
   astro: true,
-  unocss: true, // TailwindCSS support via UnoCSS
   formatters: true,
   stylistic: {
     indent: 2,
