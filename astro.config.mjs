@@ -13,7 +13,20 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   experimental: {
-    csp: true,
+    csp: {
+      scriptDirective: {
+        resources: [
+          "'self'",
+          "https://static.cloudflareinsights.com",
+        ],
+      },
+      styleDirective: {
+        resources: [
+          "'self'",
+          "https://fonts.googleapis.com",
+        ],
+      },
+    },
   },
   integrations: [mdx(), // Icon integration requires specific setting when using server or hybrid
   // to avoid that all icons from the library (mdi is being used) are installed
