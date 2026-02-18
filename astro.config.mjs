@@ -12,20 +12,18 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  experimental: {
-    csp: {
-      scriptDirective: {
-        resources: [
-          "'self'",
-          "https://static.cloudflareinsights.com",
-        ],
-      },
-      styleDirective: {
-        resources: [
-          "'self'",
-          "https://fonts.googleapis.com",
-        ],
-      },
+  csp: {
+    scriptDirective: {
+      resources: [
+        "'self'",
+        "https://static.cloudflareinsights.com",
+      ],
+    },
+    styleDirective: {
+      resources: [
+        "'self'",
+        "https://fonts.googleapis.com",
+      ],
     },
   },
   integrations: [mdx(), // Icon integration requires specific setting when using server or hybrid
