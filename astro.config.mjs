@@ -1,7 +1,9 @@
 import mdx from "@astrojs/mdx";
+import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
+
 // @ts-check
 import { defineConfig } from "astro/config";
 
@@ -26,12 +28,15 @@ export default defineConfig({
       ],
     },
   },
-  integrations: [mdx(), // Icon integration requires specific setting when using server or hybrid
-  // to avoid that all icons from the library (mdi is being used) are installed
-  // https://www.astroicon.dev/reference/configuration/
+  integrations: [// Icon integration requires specific setting when using server or hybrid
+    mdx(), // to avoid that all icons from the library (mdi is being used) are installed
+    // https://www.astroicon.dev/reference/configuration/
     icon({
       iconDir: "src/assets/icons",
-    }), sitemap()],
+    }),
+    sitemap(),
+    react(),
+  ],
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
