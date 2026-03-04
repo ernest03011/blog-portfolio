@@ -3,8 +3,11 @@ import type { CollectionEntry } from "astro:content";
 import PostPreview from "./PostPreview.astro";
 import { Icon } from "astro-icon/components";
 
+type Post = CollectionEntry<"blog">["data"] & {
+  slug: CollectionEntry<"blog">["id"];
+};
 interface Props {
-  posts: CollectionEntry<"blog">[];
+  posts: Post[];
 }
 
 const { posts } = Astro.props;
