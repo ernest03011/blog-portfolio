@@ -22,9 +22,5 @@ const { title, description } = Pages[getPageKey(pathname)];
   <section class="pt-4 italic">
     <Heading title="All Posts" hasSeparator={true} />
   </section>
-  <!-- <section class="text-content">
-    <FilterSection />
-    {allPosts.map((post) => <PostPreview post={post} variant="moderate" />)}
-  </section> -->
   <ArticleListContainer allPosts={allPosts} client:visible />
 </Layout>
