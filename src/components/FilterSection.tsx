@@ -1,22 +1,30 @@
 import type { ChangeEvent } from "react";
 import Filter from "./Filter";
 
-export default function FilterSection() {
-  const sortBy = "name";
+type Props = {
+  filterBy: string;
+  handleChange: (event: ChangeEvent<HTMLSelectElement>) => void;
+};
 
-  const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    console.warn(event.target.value);
-  };
+export default function FilterSection({ filterBy, handleChange }: Props) {
+  const listOfCategories = [
+    "Tutorials and Guides",
+    "Problem and solution",
+    "Projects and Case Studies",
+    "Learning and Growth",
+    "Insights and Best practices",
+    "Resource Tools",
+  ];
 
   return (
     <div>
       <h2>Filters</h2>
       <div>
         <Filter
-          type="sort"
-          value={sortBy}
-          onChange={handleChange}
-          listOfOptions={["name", "price", "rating"]}
+          type="category"
+          value={filterBy}
+          onChange={e => handleChange(e)}
+          listOfOptions={listOfCategories}
         />
       </div>
     </div>
