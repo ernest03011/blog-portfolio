@@ -14,7 +14,9 @@ export default function Filter({
 }: Filter) {
   return (
     <div>
-      <label htmlFor={`filter-${type}`}>{type}</label>
+      <label htmlFor={`filter-${type}`}>
+        {type.charAt(0).toUpperCase() + type.slice(1)}
+      </label>
       <select id={`filter-${type}`} value={value} onChange={onChange}>
         {listOfOptions.map((option) => {
           return (
