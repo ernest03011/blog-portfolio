@@ -14,8 +14,8 @@ export default function Filter({
 }: Filter) {
   return (
     <div>
-      <label htmlFor={type}>{type}</label>
-      <select id={type} value={value} onChange={onChange}>
+      <label htmlFor={`filter-${type}`}>{type}</label>
+      <select id={`filter-${type}`} value={value} onChange={onChange}>
         {listOfOptions.map((option) => {
           return (
             <option key={option} value={option}>
