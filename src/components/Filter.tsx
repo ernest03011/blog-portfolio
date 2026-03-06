@@ -16,11 +16,13 @@ export default function Filter({
     <div>
       <label htmlFor={type}>{type}</label>
       <select id={type} value={value} onChange={onChange}>
-        {listOfOptions.map(value => (
-          <option key={value} value={value}>
-            {value}
-          </option>
-        ))}
+        {listOfOptions.map((option) => {
+          return (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          );
+        })}
       </select>
     </div>
   );
