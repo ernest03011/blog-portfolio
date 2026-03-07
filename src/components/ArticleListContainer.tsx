@@ -15,8 +15,14 @@ type Props = {
 
 export default function ArticleListContainer({ allPosts }: Props) {
   const [filterBy, setFilterBy] = useState("All");
+  const [sortByTitle, setSortByTitle] = useState("Newest First");
+
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setFilterBy(event.target.value);
+  };
+
+  const handleSortingByTitle = (event: ChangeEvent<HTMLSelectElement>) => {
+    setSortByTitle(event.target.value);
   };
 
   const filteredPosts
@@ -24,13 +30,24 @@ export default function ArticleListContainer({ allPosts }: Props) {
       ? allPosts
       : allPosts.filter(post => post.category === filterBy);
 
+  const sortedPosts = [...filteredPosts].sort((a, b) => {
+    const sortOption = sortByTitle.trim().toLocaleLowerCase();
+
+    if (sortOption === "newest first")
+      return new Date(b.pubDate) - new Date(a.pubDate);
+    if (sortOption === "oldest first")
+      return new Date(a.pubDate) - new Date(b.pubDate);
+
+    return 0;
+  });
+
   return (
     <section className="text-content">
-      <FilterSection filterBy={filterBy} handleChange={handleChange} />
+      <FilterSection filterBy={filterBy} handleChange={handleChange} sortByTitle={sortByTitle} handleSortingByTitle={handleSortingByTitle} />
 
-      {filteredPosts.length <= 0
+      {sortedPosts.length <= 0
         ? <EmptyList />
-        : filteredPosts.map(post => (
+        : sortedPosts.map(post => (
             <PostPreviewCard key={post.slug} post={post} variant="moderate" />
           ))}
     </section>
