@@ -8,6 +8,7 @@ type Props = {
 
 export default function FilterSection({ filterBy, handleChange }: Props) {
   const listOfCategories = [
+    "All",
     "Tutorials and Guides",
     "Problem and solution",
     "Projects and Case Studies",

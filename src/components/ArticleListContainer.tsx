@@ -14,13 +14,13 @@ type Props = {
 };
 
 export default function ArticleListContainer({ allPosts }: Props) {
-  const [filterBy, setFilterBy] = useState("");
+  const [filterBy, setFilterBy] = useState("All");
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setFilterBy(event.target.value);
   };
 
   const filteredPosts
-    = filterBy === ""
+    = filterBy === "All"
       ? allPosts
       : allPosts.filter(post => post.category === filterBy);
 
