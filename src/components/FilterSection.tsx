@@ -6,9 +6,11 @@ type Props = {
   handleChange: (event: ChangeEvent<HTMLSelectElement>) => void;
   sortByTitle: string;
   handleSortingByTitle: (event: ChangeEvent<HTMLSelectElement>) => void;
+  searchQuery: string;
+  handleSearchQuery: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
-export default function FilterSection({ filterBy, handleChange, sortByTitle, handleSortingByTitle }: Props) {
+export default function FilterSection({ filterBy, handleChange, sortByTitle, handleSortingByTitle, searchQuery, handleSearchQuery }: Props) {
   const listOfCategories = [
     "All",
     "Tutorials and Guides",
@@ -43,6 +45,16 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
           onChange={e => handleSortingByTitle(e)}
           listOfOptions={titleSortOptions}
         />
+
+        <div>
+          <span>Tags</span>
+          <input
+            type="text"
+            placeholder="Search Tags"
+            value={searchQuery}
+            onChange={e => handleSearchQuery(e)}
+          />
+        </div>
 
       </div>
     </div>
