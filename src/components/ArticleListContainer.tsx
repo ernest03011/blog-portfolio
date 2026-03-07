@@ -37,6 +37,10 @@ export default function ArticleListContainer({ allPosts }: Props) {
       return new Date(b.pubDate) - new Date(a.pubDate);
     if (sortOption === "oldest first")
       return new Date(a.pubDate) - new Date(b.pubDate);
+    if (sortOption === "title name a-z")
+      return a.title.localeCompare(b.title);
+    if (sortOption === "title name z-a")
+      return b.title.localeCompare(a.title);
 
     return 0;
   });
