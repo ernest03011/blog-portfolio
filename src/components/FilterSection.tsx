@@ -4,9 +4,11 @@ import Filter from "./Filter";
 type Props = {
   filterBy: string;
   handleChange: (event: ChangeEvent<HTMLSelectElement>) => void;
+  sortByTitle: string;
+  handleSortingByTitle: (event: ChangeEvent<HTMLSelectElement>) => void;
 };
 
-export default function FilterSection({ filterBy, handleChange }: Props) {
+export default function FilterSection({ filterBy, handleChange, sortByTitle, handleSortingByTitle }: Props) {
   const listOfCategories = [
     "All",
     "Tutorials and Guides",
@@ -15,6 +17,13 @@ export default function FilterSection({ filterBy, handleChange }: Props) {
     "Learning and Growth",
     "Insights and Best practices",
     "Resource Tools",
+  ];
+
+  const titleSortOptions = [
+    "Newest First",
+    "Oldest First",
+    "Title Name A-Z",
+    "Title Name Z-A",
   ];
 
   return (
@@ -27,6 +36,14 @@ export default function FilterSection({ filterBy, handleChange }: Props) {
           onChange={e => handleChange(e)}
           listOfOptions={listOfCategories}
         />
+
+        <Filter
+          type="sort"
+          value={sortByTitle}
+          onChange={e => handleSortingByTitle(e)}
+          listOfOptions={titleSortOptions}
+        />
+
       </div>
     </div>
   );
