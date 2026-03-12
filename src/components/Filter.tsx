@@ -5,15 +5,17 @@ type Filter = {
   value: string;
   onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
   listOfOptions: string[];
+  className?: string;
 };
 export default function Filter({
   type,
   value,
   onChange,
   listOfOptions,
+  className,
 }: Filter) {
   return (
-    <div>
+    <div className={className}>
       <label htmlFor={`filter-${type}`}>
         {type.charAt(0).toUpperCase() + type.slice(1)}
         {": "}
