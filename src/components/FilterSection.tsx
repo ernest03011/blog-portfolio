@@ -47,12 +47,13 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
         />
 
         <div>
-          <span>Tags</span>
+          <span className="block">Tags:</span>
           <input
             type="text"
             placeholder="Search Tags"
             value={searchQuery}
             onChange={e => handleSearchQuery(e)}
+            className="border hover:border-accent"
           />
         </div>
 
