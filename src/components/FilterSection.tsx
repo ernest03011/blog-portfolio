@@ -1,4 +1,5 @@
 import type { ChangeEvent } from "react";
+import { useState } from "react";
 import Filter from "./Filter";
 
 type Props = {
@@ -11,6 +12,8 @@ type Props = {
 };
 
 export default function FilterSection({ filterBy, handleChange, sortByTitle, handleSortingByTitle, searchQuery, handleSearchQuery }: Props) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   const listOfCategories = [
     "All",
     "Tutorials and Guides",
@@ -39,23 +42,37 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
           listOfOptions={listOfCategories}
         />
 
-        <Filter
-          type="sort"
-          value={sortByTitle}
-          onChange={e => handleSortingByTitle(e)}
-          listOfOptions={titleSortOptions}
-        />
+        <button
+          type="button"
+          onClick={() => setIsExpanded(prev => !prev)}
+        >
+          Filters
+        </button>
 
-        <div>
-          <span className="block">Tags:</span>
-          <input
-            type="text"
-            placeholder="Search Tags"
-            value={searchQuery}
-            onChange={e => handleSearchQuery(e)}
-            className="border hover:border-accent"
-          />
-        </div>
+        {
+          isExpanded
+          && (
+            <>
+              <Filter
+                type="sort"
+                value={sortByTitle}
+                onChange={e => handleSortingByTitle(e)}
+                listOfOptions={titleSortOptions}
+              />
+
+              <div>
+                <span className="block">Tags:</span>
+                <input
+                  type="text"
+                  placeholder="Search Tags"
+                  value={searchQuery}
+                  onChange={e => handleSearchQuery(e)}
+                  className="border hover:border-accent"
+                />
+              </div>
+            </>
+          )
+        }
 
       </div>
     </div>
