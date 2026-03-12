@@ -35,19 +35,24 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
     <div>
       <h2>Filters</h2>
       <div>
-        <Filter
-          type="category"
-          value={filterBy}
-          onChange={e => handleChange(e)}
-          listOfOptions={listOfCategories}
-        />
-
-        <button
-          type="button"
-          onClick={() => setIsExpanded(prev => !prev)}
+        <div
+          className="flex justify-between"
         >
-          Filters
-        </button>
+          <Filter
+            type="category"
+            value={filterBy}
+            onChange={e => handleChange(e)}
+            listOfOptions={listOfCategories}
+          />
+
+          <button
+            type="button"
+            onClick={() => setIsExpanded(prev => !prev)}
+            className={`${isExpanded ? "bg-accent font-bold text-surface!" : ""}border border-accent hover:bg-accent hover:text-secondary hover:font-bold px-6 py-1 rounded-full`}
+          >
+            Filters
+          </button>
+        </div>
 
         {
           isExpanded
