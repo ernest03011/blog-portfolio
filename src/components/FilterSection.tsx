@@ -33,10 +33,9 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
 
   return (
     <div>
-      <h2>Filters</h2>
       <div>
         <div
-          className="flex justify-between"
+          className="flex justify-between mb-8"
         >
           <Filter
             type="category"
@@ -48,7 +47,7 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
           <button
             type="button"
             onClick={() => setIsExpanded(prev => !prev)}
-            className={`${isExpanded ? "bg-accent font-bold text-surface!" : ""}border border-accent hover:bg-accent hover:text-secondary hover:font-bold px-6 py-1 rounded-full`}
+            className={`${isExpanded ? "bg-accent font-bold text-surface!" : ""} border border-accent hover:bg-accent hover:text-secondary hover:font-bold px-6 py-1 rounded-full`}
           >
             Filters
           </button>
@@ -57,7 +56,9 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
         {
           isExpanded
           && (
-            <>
+            <div
+              className="flex justify-between my-8"
+            >
               <Filter
                 type="sort"
                 value={sortByTitle}
@@ -72,10 +73,10 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
                   placeholder="Search Tags"
                   value={searchQuery}
                   onChange={e => handleSearchQuery(e)}
-                  className="border hover:border-accent"
+                  className="border hover:border-accent px-2"
                 />
               </div>
-            </>
+            </div>
           )
         }
 
