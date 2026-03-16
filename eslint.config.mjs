@@ -3,6 +3,7 @@
 // https://gist.github.com/w3cj/21b1f1b4857ecd13d076075a5c5aaf13
 
 import antfu from "@antfu/eslint-config";
+import nodePlugin from "eslint-plugin-n";
 
 export default antfu({
   type: "app",
@@ -16,6 +17,9 @@ export default antfu({
     quotes: "double",
   },
 }, {
+  plugins: {
+    node: nodePlugin,
+  },
   rules: {
     "ts/no-redeclare": "off",
     "ts/consistent-type-definitions": ["error", "type"],
@@ -23,9 +27,6 @@ export default antfu({
     "antfu/no-top-level-await": ["off"],
     "node/prefer-global/process": ["off"],
     "node/no-process-env": ["error"],
-    "perfectionist/sort-imports": ["error", {
-      tsconfigRootDir: ".",
-    }],
     "unicorn/filename-case": ["error", {
       case: "kebabCase",
       ignore: [

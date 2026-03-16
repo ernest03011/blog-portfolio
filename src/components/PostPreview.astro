@@ -1,17 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
 import FormattedDate from "@components/FormattedDate.astro";
+import type { CollectionEntry } from "astro:content";
 
-type Data = {
-  title: string;
-  description: string;
-  pubDate: Date;
-  updatedDate?: Date;
-};
-
-type Post = {
-  slug: string;
-  data: Data;
+type Post = CollectionEntry<"blog">["data"] & {
+  slug: CollectionEntry<"blog">["id"];
 };
 
 interface Props {
@@ -46,16 +39,16 @@ const cardContainerDesign = cardDesignConfig[cardDesign];
   )}
 } -->
   <h4 class="text-primary group-hover:text-accent mb-3 font-semibold">
-    <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+    <a href={`/blog/${post.slug}`}>{post.title}</a>
   </h4>
   <!-- Description  -->
   <div>
-    {showDescription && <p class="text-foreground my-4 pl-0.5 text-base/7">{post.data.description}</p>}
+    {showDescription && <p class="text-foreground my-4 pl-0.5 text-base/7">{post.description}</p>}
   </div>
   <!-- Date and Read link -->
   <div>
     <p class="">
-      <FormattedDate date={post.data.pubDate} />
+      <FormattedDate date={post.pubDate} />
     </p>
     <a class="group-hover:text-accent flex items-center" href={`/blog/${post.slug}`}>
       Read

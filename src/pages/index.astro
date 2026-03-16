@@ -11,6 +11,10 @@ const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 
+const latestThreePosts = posts.map((post) => {
+  return { ...post.data, slug: post.id };
+});
+
 const { pathname } = Astro.url;
 const { title, description } = Pages[getPageKey(pathname)];
 ---
@@ -31,7 +35,7 @@ const { title, description } = Pages[getPageKey(pathname)];
       <p slot="box-body" class="text-content mb-4">{Site.author.bioSummary}</p>
     </Box>
   </section>
-  <LatestPosts {posts} />
+  <LatestPosts posts={latestThreePosts} />
 </Layout>
 
 <script>
