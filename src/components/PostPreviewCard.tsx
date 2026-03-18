@@ -26,7 +26,7 @@ export default function PostPreviewCard({
     primary:
       "bg-surface-elevated hover:bg-surface-hover border-divider rounded-lg border-1 border-solid shadow-lg",
     secondary:
-      "hover:rounded-xl hover:shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:ring-1 hover:ring-border hover:ring-accent transition-all duration-300",
+      "hover:rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:ring-1 hover:ring-border hover:ring-accent transition-all duration-300",
   };
 
   const { showDescription } = variantConfig[variant];
