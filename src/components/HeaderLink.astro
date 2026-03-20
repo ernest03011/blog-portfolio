@@ -1,16 +1,20 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<"a">;
+type NavItem = {
+  navItem: string;
+};
 
-const { href, class: className, ...props } = Astro.props;
+type Props = HTMLAttributes<"a"> & NavItem;
+
+const { href, class: className, navItem, ...props } = Astro.props;
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
 const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
-  <slot />
+  {navItem}
 </a>
 <style>
   a {
@@ -18,9 +22,10 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
     text-decoration: none;
     transition: 1s;
   }
-  a:active {
+  a.active {
     font-weight: bolder;
     font-style: italic;
+    color: var(--color-primary);
   }
 
   a:hover {

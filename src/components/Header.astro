@@ -10,7 +10,7 @@ import { Site } from "@data/site";
   <nav class="">
     <h2 class="text-primary ff-jetbrains-mono"><a href="/">{Site.title}</a></h2>
     <div class="internal-links text-content">
-      {Nav.map((nav) => <HeaderLink href={nav.href}>{nav.label}</HeaderLink>)}
+      {Nav.map((nav) => <HeaderLink href={nav.href} navItem={nav.label} />)}
     </div>
     <div class="social-links text-accent">
       {
