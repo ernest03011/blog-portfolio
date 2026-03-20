@@ -16,7 +16,7 @@ import { Site } from "@data/site";
       {
         SocialLinks.map((socialLink) => {
           return (
-            <a href={socialLink.href} target="_blank">
+            <a href={socialLink.href} target="_blank" class="hover:text-accent/50">
               <span class="sr-only">{socialLink.srMessage}</span>
               <Icon name={socialLink.iconName} size={32} />
             </a>
@@ -59,9 +59,10 @@ import { Site } from "@data/site";
     text-decoration: none;
   }
   .social-links,
-  .social-links a {
+  .social-links > a {
     display: flex;
     padding: 0.5rem 0.1em;
+    transition: 1s;
   }
   @media (max-width: 720px) {
     .social-links {
