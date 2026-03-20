@@ -9,7 +9,7 @@ import builtWithAstroImage from "@assets/images/built-with-astro.webp";
 import friendsOfHoustonGif from "@assets/gif/friends-of-houston.gif";
 ---
 
-<footer class="border-divider border-t-1 border-solid">
+<footer class="border-divider border-t border-solid">
   <p class="text-primary">
     &copy; {today.getFullYear()}
     {Site.author.name}. All rights reserved.
@@ -18,7 +18,7 @@ import friendsOfHoustonGif from "@assets/gif/friends-of-houston.gif";
     {
       SocialLinks.map((socialLink) => {
         return (
-          <a href={socialLink.href} target="_blank">
+          <a href={socialLink.href} target="_blank" class="hover:text-accent/50">
             <span class="sr-only">{socialLink.srMessage}</span>
             <Icon name={socialLink.iconName} size={32} />
           </a>
@@ -47,8 +47,9 @@ import friendsOfHoustonGif from "@assets/gif/friends-of-houston.gif";
     gap: 0.1rem;
     margin-top: 1em;
   }
-  .social-links a {
+  .social-links > a {
     padding: 0.5rem 0.1em;
     text-decoration: none;
+    transition: 1s;
   }
 </style>

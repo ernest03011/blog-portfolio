@@ -10,13 +10,13 @@ import { Site } from "@data/site";
   <nav class="">
     <h2 class="text-primary ff-jetbrains-mono"><a href="/">{Site.title}</a></h2>
     <div class="internal-links text-content">
-      {Nav.map((nav) => <HeaderLink href={nav.href}>{nav.label}</HeaderLink>)}
+      {Nav.map((nav) => <HeaderLink href={nav.href} navItem={nav.label} />)}
     </div>
     <div class="social-links text-accent">
       {
         SocialLinks.map((socialLink) => {
           return (
-            <a href={socialLink.href} target="_blank">
+            <a href={socialLink.href} target="_blank" class="hover:text-accent/50">
               <span class="sr-only">{socialLink.srMessage}</span>
               <Icon name={socialLink.iconName} size={32} />
             </a>
@@ -37,10 +37,15 @@ import { Site } from "@data/site";
     font-size: 1em;
   }
 
-  h2 a,
-  h2 a.active {
+  h2 > a {
     text-decoration: none;
+    transition: 1.5s;
   }
+
+  h2 > a:hover {
+    color: var(--color-accent);
+  }
+
   nav {
     display: flex;
     align-items: center;
@@ -54,9 +59,10 @@ import { Site } from "@data/site";
     text-decoration: none;
   }
   .social-links,
-  .social-links a {
+  .social-links > a {
     display: flex;
     padding: 0.5rem 0.1em;
+    transition: 1s;
   }
   @media (max-width: 720px) {
     .social-links {
