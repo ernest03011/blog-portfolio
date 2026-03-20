@@ -37,10 +37,15 @@ import { Site } from "@data/site";
     font-size: 1em;
   }
 
-  h2 a,
-  h2 a.active {
+  h2 > a {
     text-decoration: none;
+    transition: 1.5s;
   }
+
+  h2 > a:hover {
+    color: var(--color-accent);
+  }
+
   nav {
     display: flex;
     align-items: center;
