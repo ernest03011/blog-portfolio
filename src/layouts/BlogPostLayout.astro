@@ -37,7 +37,7 @@ const postTitle = title;
                 )
               }
             </div>
-            <h1 class="text-primary">{title}</h1>
+            <h1 class="text-primary animate-on-load">{title}</h1>
             <hr class="text-divider" />
           </div>
           <slot />
@@ -75,13 +75,27 @@ const postTitle = title;
     text-align: center;
     line-height: 1;
   }
-  .title h1 {
+  .title > h1 {
     margin: 0 0 0.5em 0;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeUp 1s ease forwards;
   }
   .date {
     margin-bottom: 0.5em;
   }
   .last-updated-on {
     font-style: italic;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    50% {
+      color: rgb(var(--color-primary) / 0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
