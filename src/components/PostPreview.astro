@@ -50,7 +50,11 @@ const cardContainerDesign = cardDesignConfig[cardDesign];
     <p class="">
       <FormattedDate date={post.pubDate} />
     </p>
-    <a class="group-hover:text-accent flex items-center" href={`/blog/${post.slug}`}>
+    <a
+      class="group-hover:text-accent flex items-center"
+      href={`/blog/${post.slug}`}
+      transition:name={`title-${post.title}`}
+    >
       Read
       <Icon name="mdi:chevron-double-right" class="ml-2" size={20} />
     </a>
