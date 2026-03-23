@@ -40,7 +40,9 @@ const postTitle = title;
                 )
               }
             </div>
-            <h1 class="text-primary animate-on-load">{title}</h1>
+            <h1 class="text-primary animate-on-load" transition:name={`title-${title}`}>
+              {title}
+            </h1>
             <hr class="text-divider" />
           </div>
           <slot />
