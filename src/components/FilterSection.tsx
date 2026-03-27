@@ -47,8 +47,32 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
           <button
             type="button"
             onClick={() => setIsExpanded(prev => !prev)}
-            className={`${isExpanded ? "bg-accent font-bold text-surface!" : ""} border border-accent hover:bg-accent hover:text-secondary hover:font-bold px-6 py-1 rounded-full`}
+            className={`${isExpanded ? "bg-accent font-bold text-surface!" : ""} flex gap-1 border border-accent hover:bg-accent hover:text-secondary hover:font-bold px-6 py-1 rounded-full`}
           >
+            {
+              isExpanded
+                ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-filter-2-up">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M4 6h16" />
+                      <path d="M6 12h12" />
+                      <path d="M9 18h3" />
+                      <path d="M19 22v-6m0 0l3 3m-3 -3l-3 3" />
+                    </svg>
+                  )
+                : (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-filter-2-down">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M4 6h16" />
+                      <path d="M6 12h12" />
+                      <path d="M9 18h3" />
+                      <path d="M19 16v6" />
+                      <path d="M19 22l3 -3" />
+                      <path d="M19 22l-3 -3" />
+                    </svg>
+                  )
+            }
+
             Filters
           </button>
         </div>
