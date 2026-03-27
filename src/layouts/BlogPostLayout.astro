@@ -19,6 +19,9 @@ const postTitle = title;
   </head>
 
   <body class="bg-surface flex min-h-screen flex-col">
+    <div class="bar-container">
+      <div class="bar"></div>
+    </div>
     <Header />
     <main class="bg-surface p grow py-4">
       <article>
@@ -37,7 +40,9 @@ const postTitle = title;
                 )
               }
             </div>
-            <h1 class="text-primary animate-on-load">{title}</h1>
+            <h1 class="text-primary animate-on-load" transition:name={`title-${title}`}>
+              {title}
+            </h1>
             <hr class="text-divider" />
           </div>
           <slot />
@@ -88,6 +93,27 @@ const postTitle = title;
   .last-updated-on {
     font-style: italic;
   }
+  .bar-container {
+    background-color: var(--color-muted);
+    width: 100%;
+    height: 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+  }
+
+  .bar {
+    width: 0;
+    height: 100%;
+    box-shadow: 0 0 5px var(--color-primary);
+    background: var(--color-accent);
+
+    @supports (animation-timeline: scroll()) {
+      animation: resize linear forwards;
+      animation-timeline: scroll(root block);
+    }
+  }
 
   /* Animations */
   @keyframes fadeUp {
@@ -97,6 +123,12 @@ const postTitle = title;
     100% {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes resize {
+    100% {
+      width: 100%;
     }
   }
 </style>
