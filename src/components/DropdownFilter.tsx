@@ -15,12 +15,17 @@ export default function DropdownFilter({
   className,
 }: DropdownFilter) {
   return (
-    <div className={className}>
+    <div>
       <label htmlFor={`filter-${label}`} className="sr-only">
         {label.charAt(0).toUpperCase() + label.slice(1)}
         {": "}
       </label>
-      <select id={`filter-${label}`} value={value} onChange={onChange}>
+      <select
+        id={`filter-${label}`}
+        value={value}
+        onChange={onChange}
+        className={className}
+      >
         {listOfOptions.map((option) => {
           return (
             <option key={option} value={option}>
