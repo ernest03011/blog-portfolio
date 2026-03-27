@@ -1,6 +1,6 @@
 import type { ChangeEvent } from "react";
 import { useState } from "react";
-import Filter from "./Filter";
+import DropdownFilter from "./DropdownFilter";
 import SearchFilter from "./SearchFilter";
 
 type Props = {
@@ -38,8 +38,8 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
         <div
           className="flex justify-between mb-8"
         >
-          <Filter
-            type="category"
+          <DropdownFilter
+            label="Category"
             value={filterBy}
             onChange={e => handleChange(e)}
             listOfOptions={listOfCategories}
@@ -84,8 +84,8 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
             <div
               className="flex justify-between my-8"
             >
-              <Filter
-                type="sort"
+              <DropdownFilter
+                label="Sort"
                 value={sortByTitle}
                 onChange={e => handleSortingByTitle(e)}
                 listOfOptions={titleSortOptions}
