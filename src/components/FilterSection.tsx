@@ -1,6 +1,7 @@
 import type { ChangeEvent } from "react";
 import { useState } from "react";
 import Filter from "./Filter";
+import SearchFilter from "./SearchFilter";
 
 type Props = {
   filterBy: string;
@@ -90,16 +91,11 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
                 listOfOptions={titleSortOptions}
               />
 
-              <div>
-                <span className="block">Tags:</span>
-                <input
-                  type="text"
-                  placeholder="Search Tags"
-                  value={searchQuery}
-                  onChange={e => handleSearchQuery(e)}
-                  className="border hover:border-accent px-2"
-                />
-              </div>
+              <SearchFilter
+                label="Tags"
+                searchQuery={searchQuery}
+                handleSearchQuery={handleSearchQuery}
+              />
             </div>
           )
         }
