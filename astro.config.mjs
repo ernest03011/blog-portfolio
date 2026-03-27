@@ -31,7 +31,8 @@ export default defineConfig({
   },
   integrations: [// Icon integration requires specific setting when using server or hybrid
   // to avoid that all icons from the library (mdi is being used) are installed
-    mdx(), // https://www.astroicon.dev/reference/configuration/
+  // https://www.astroicon.dev/reference/configuration/
+    mdx(),
     icon({
       iconDir: "src/assets/icons",
     }),
