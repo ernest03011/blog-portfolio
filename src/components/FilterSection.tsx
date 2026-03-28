@@ -43,6 +43,7 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
             value={filterBy}
             onChange={e => handleChange(e)}
             listOfOptions={listOfCategories}
+            className="w-50 text-sm"
           />
 
           <button
@@ -82,13 +83,14 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
           isExpanded
           && (
             <div
-              className="flex justify-between my-8"
+              className="flex md:justify-between md:flex-row my-8 flex-col justify-start items-start gap-2"
             >
               <DropdownFilter
                 label="Sort"
                 value={sortByTitle}
                 onChange={e => handleSortingByTitle(e)}
                 listOfOptions={titleSortOptions}
+                className="w-50 text-sm"
               />
 
               <SearchFilter
