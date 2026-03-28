@@ -43,7 +43,7 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
             value={filterBy}
             onChange={e => handleChange(e)}
             listOfOptions={listOfCategories}
-            className="w-50 text-sm"
+            className="w-50 text-sm md:w-auto md:text-base"
           />
 
           <button
@@ -90,7 +90,7 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
                 value={sortByTitle}
                 onChange={e => handleSortingByTitle(e)}
                 listOfOptions={titleSortOptions}
-                className="w-50 text-sm"
+                className="w-50 text-sm md:w-auto md:text-base"
               />
 
               <SearchFilter
