@@ -15,7 +15,7 @@ export default function DropdownFilter({
   className,
 }: DropdownFilter) {
   return (
-    <div>
+    <div className="custom-select">
       <label htmlFor={`filter-${label}`} className="sr-only">
         {label.charAt(0).toUpperCase() + label.slice(1)}
         {": "}
@@ -34,6 +34,7 @@ export default function DropdownFilter({
           );
         })}
       </select>
+      <span className="custom-arrow"></span>
     </div>
   );
 }
