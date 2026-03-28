@@ -36,7 +36,7 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
     <div className="bg-surface-elevated hover:bg-surface-hover border-divider rounded-lg border- border-solid shadow-lg px-4 py-4">
       <div>
         <div
-          className="flex justify-between mb-8"
+          className="flex justify-between mb-3"
         >
           <DropdownFilter
             label="Category"
