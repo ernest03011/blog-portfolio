@@ -36,4 +36,11 @@ export default antfu({
     }],
     "style/brace-style": ["error", "1tbs"],
   },
+}, {
+  files: [
+    "src/components/**/**",
+  ],
+  rules: {
+    "unicorn/filename-case": "off",
+  },
 });
