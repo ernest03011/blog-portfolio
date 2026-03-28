@@ -48,7 +48,7 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
           <button
             type="button"
             onClick={() => setIsExpanded(prev => !prev)}
-            className={`${isExpanded ? "bg-accent font-bold text-surface!" : ""} flex gap-1 border border-accent hover:bg-accent hover:text-secondary hover:font-bold px-6 py-1 rounded-full`}
+            className={`${isExpanded ? "bg-accent font-bold text-surface!" : ""} flex justify-center items-center gap-1 border border-accent hover:bg-accent hover:text-secondary hover:font-bold px-6 py-1 rounded-full`}
           >
             {
               isExpanded
