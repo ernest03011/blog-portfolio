@@ -33,7 +33,7 @@ export default function FilterSection({ filterBy, handleChange, sortByTitle, han
   ];
 
   return (
-    <div className="bg-linear-to-r from-secondary to-surface rounded-lg shadow-lg px-4 py-4">
+    <div className="bg-linear-to-r from-secondary to-surface rounded-lg shadow-lg px-4 py-4 mb-10">
       <div>
         <div
           className="flex justify-between mb-3"
