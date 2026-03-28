@@ -73,6 +73,57 @@ small {
   font-family: "JetBrains Mono", monospace;
 }
 
+select {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  padding: 1em 4em 1em 1.5em;
+  background: var(--color-surface);
+  border-radius: 8px;
+}
+
+.custom-select {
+  position: relative;
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background: var(--color-surface-elevated);
+  width: 4em;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 0px 8px 8px 0px;
+}
+
+.custom-arrow::before,
+.custom-arrow::after {
+  --size: 0.5em;
+
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-arrow::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid var(--color-accent);
+
+  top: 40%;
+}
+.custom-arrow::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid var(--color-accent);
+
+  top: 60%;
+}
+
 /* Below 640px (smaller headings, same ratio) */
 @media (max-width: 639px) {
   h1 {
