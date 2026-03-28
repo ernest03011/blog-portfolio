@@ -124,6 +124,23 @@ select {
   top: 60%;
 }
 
+.search-input {
+  display: block;
+  /* width: 100%; */
+  max-height: 30px;
+  padding-left: 35px;
+  padding-block: 12px;
+  border: 1px solid var(--color-surface-elevated);
+  border-radius: 6px;
+  background-color: var(--color-surface);
+  box-shadow: 0 10px 15px 3px var(--shadow);
+
+  background-image: url("../assets/icons/search.svg");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 16px;
+}
+
 /* Below 640px (smaller headings, same ratio) */
 @media (max-width: 639px) {
   h1 {

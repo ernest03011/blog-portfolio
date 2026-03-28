@@ -11,8 +11,8 @@ export default function SearchFilter({ label, searchQuery, handleSearchQuery, cl
   const baseStyles = "border hover:border-accent px-2";
 
   return (
-    <div>
-      <span className="block">
+    <div className="flex justify-center items-center gap-2">
+      <span className="block hover:text-primary transition-colors">
         {label}
         :
       </span>
@@ -21,7 +21,7 @@ export default function SearchFilter({ label, searchQuery, handleSearchQuery, cl
         placeholder={`Search ${label}`}
         value={searchQuery}
         onChange={e => handleSearchQuery(e)}
-        className={`${baseStyles} ${className}`}
+        className={`${baseStyles} ${className} search-input`}
       />
     </div>
   );
