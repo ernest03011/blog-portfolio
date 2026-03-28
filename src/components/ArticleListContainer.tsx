@@ -52,9 +52,9 @@ export default function ArticleListContainer({ allPosts }: Props) {
     const sortOption = sortByTitle.trim().toLocaleLowerCase();
 
     if (sortOption === "newest first")
-      return new Date(b.pubDate) - new Date(a.pubDate);
+      return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime();
     if (sortOption === "oldest first")
-      return new Date(a.pubDate) - new Date(b.pubDate);
+      return new Date(a.pubDate).getTime() - new Date(b.pubDate).getTime();
     if (sortOption === "title name a-z")
       return a.title.localeCompare(b.title);
     if (sortOption === "title name z-a")

@@ -1,11 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@layouts/BaseLayout.astro";
-import PostPreview from "@components/PostPreview.astro";
 import Heading from "@components/Heading.astro";
 import { Pages } from "@data/pages";
 import { getPageKey } from "@utils/page";
-import FilterSection from "@components/FilterSection.tsx";
 import ArticleListContainer from "@components/ArticleListContainer.tsx";
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
